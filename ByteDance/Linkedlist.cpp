@@ -29,6 +29,26 @@ public:
     }
 };
 
+// 头插法的另一种写法 dummy head
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if (!head || !head->next) return head;
+        
+        ListNode *dummy = new ListNode(0);
+        dummy->next = head;
+        
+        while (head && head->next) {
+            ListNode *curr = head->next;
+            head->next = curr->next; //将curr从原链表断开
+            curr->next = dummy->next; //插入至新表表头后
+            dummy->next = curr; //调整新表头dummy head的位置
+        }
+        
+        return dummy->next;
+    }
+};
+
 //就地逆置法反转链表
 //就地逆置法和头插法的实现思想类似，唯一的区别在于，头插法是通过建立一个新链表实现的，而就地逆置法则是直接对原链表做修改，从而实现将原链表反转。
 //值得一提的是，在原链表的基础上做修改，需要额外借助 2 个指针

@@ -58,7 +58,7 @@ public:
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        if (!head !! !head->next) return head;
+        if (!head || !head->next) return head;
         // 一直递归，直到找到链表的最后一个节点
         ListNode* new_head = reverseList(head->next);
         // 从后向前逐层退出，new_head指向一直不变，指向原链表的最后一个节点；而head指针则指向上一个节点

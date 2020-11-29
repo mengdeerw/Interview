@@ -1,9 +1,11 @@
+// https://luweikxy.gitbook.io/machine-learning-notes/data-structures-and-algorithms/algorithms/sort/quick-sort
 #include <bits/stdc++.h>
 using namespace std;
-
 // Quick Sort
 // Time complexity: worst~O(N^2); average~(NlogN)
 
+// 有两种方法，单指针遍历法 以及 双指针遍历法
+// 以下为单指针遍历法
 /*
 The key process in quickSort is partition(). 
 Given an array and an element x of array as pivot, put x at its correct position in sorted array 

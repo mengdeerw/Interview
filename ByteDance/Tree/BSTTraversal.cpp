@@ -27,6 +27,58 @@ public:
     }
 };
 
+// BFS iteration (change node, not preferred)
+// inorder: left, node, right
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> result;
+        if (!root) return result;
+        stack<TreeNode*> s;
+        s.push(root);
+        
+        while (!s.empty()) {
+            TreeNode* node = s.top();
+            if (node->left) {
+                s.push(node->left);
+                node->left = NULL;
+            } else {
+                result.push_back(node->val);
+                s.pop();
+                if (node->right)
+                    s.push(node->right);
+            }
+        }
+        return result;
+    }
+};
+
+// BFS iteration (not changing nodes, preferred)
+// inorder: left, node, right
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> result;
+        if (!root) return result;
+        stack<TreeNode*> s;
+        TreeNode* curr = root;
+        
+        while (!s.empty() || curr) {
+            // continue until find the leftmost leaf node
+            if (curr) {
+                s.push(curr);
+                curr = curr->left;
+            } else { // else means no left child, then save current node and iterate to its right child
+                TreeNode* node = s.top();
+                result.push_back(node->val);
+                s.pop();
+                curr = node->right;
+            }
+        }
+        return result;
+    }
+};
+
 // preorder: root, left, right
 // recursive
 class Solution {
@@ -82,5 +134,28 @@ public:
         postorder(root->left, result);
         postorder(root->right, result);
         result.push_back(root->val);
+    }
+};
+
+// BFS + iteration
+// post order: left, right, node
+// stack push order: node. right, left
+class Solution {
+public:
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int> result;
+        if (!root) return result;
+        stack<TreeNode*> s;
+        s.push(root);
+        while (!s.empty()) {
+            TreeNode* node = s.top();
+            s.pop();
+            result.push_back(node->val);
+            if (node->left) s.push(node->left);
+            if (node->right) s.push(node->right);
+        }
+        // 此时result中的顺序是node, right, left, 需反转
+        reverse(result.begin(), result.end());
+        return result;
     }
 };

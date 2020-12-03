@@ -51,3 +51,59 @@ public:
         return false;
     }
 };
+
+//METHOD-3 DIVIDE AND CONQUER APPROACH
+//Time complexity: O(nlogn)
+
+class Solution {
+public:
+
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        return searchRect(matrix, target, 0, 0, matrix.size() - 1, matrix[0].size() - 1);
+    }
+
+    bool searchRect(vector<vector<int>>& matrix, int target, 
+                               int top, int left, int bottom, int right) {
+        
+        if(top>bottom || left>right)
+            return false;
+        
+        int x = (top + bottom) / 2;
+        int y = (left + right) / 2;
+        int center = matrix[x][y];
+        
+        if(center > target){
+            return
+                searchRect(matrix, target, top, left, x - 1, right) ||
+                searchRect(matrix, target, x, left, bottom, y - 1);
+        }
+        else if(center < target){
+            return
+                searchRect(matrix, target, x + 1, left, bottom, right) ||
+                searchRect(matrix, target, top, y + 1, x, right);
+        }
+        else
+            return true;
+    }
+};
+
+// METHOD-4 BINARY SEARCH SOLUTION: 
+// Time complexity: O(nlogn)
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        int m = matrix.size(), n = matrix[0].size();
+        for (int i = 0; i < m; i++) {
+            if (matrix[i][0] <= target && target <= matrix[i][n - 1]) {
+                int left = 0, right = n - 1;
+                while (left <= right) {
+                    int mid = left + (right - left) / 2;
+                    if (matrix[i][mid] == target) return true;
+                    else if (matrix[i][mid] > target) right = mid - 1;
+                    else left = mid + 1;
+                }
+            }
+        }
+        return false;
+    }
+};

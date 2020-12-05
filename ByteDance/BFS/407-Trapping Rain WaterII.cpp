@@ -52,3 +52,61 @@ public:
         return result;
     }
 };
+
+// more concise using structure
+class Solution {
+public:
+    int trapRainWater(vector<vector<int>>& heightMap) {
+        if(heightMap.empty()){return 0;}
+        //step 1:
+        priority_queue<pip, vector<pip>, comp> minHeap;
+
+        int m = heightMap.size();
+        int n = heightMap[0].size();
+        
+        vector<vector<bool>> visited(m, vector<bool>(n,false));//record the visited nodes
+        
+        for(int i = 0; i < m; i++){
+            for (int j = 0; j < n; j++) {
+                if (i == 0 || j == 0 || i == m - 1 || j == n - 1) {
+                    minHeap.push({heightMap[i][j], {i, j}});
+                    visited[i][j] = true;
+                }
+            }
+        }
+
+        //steps 2-6:
+        int Max = minHeap.top().first;//update when a larger bar is extracted
+        int res = 0;//add or update when a visited square has height lower than Max
+        
+        static vector<vector<int>> directions = {{0,1},{0,-1},{1,0},{-1,0}};
+        
+        while(!minHeap.empty()){
+            auto u = minHeap.top();
+            minHeap.pop();
+            int u_h = u.first;
+            int u_r = u.second.first;
+            int u_c = u.second.second;
+            Max = max(Max, u_h);
+            for(auto d : directions){
+                int x = u_r + d[0];
+                int y = u_c + d[1];
+                if(x>0 && x<m && y>0 && y<n && !visited[x][y]){
+                    visited[x][y] = true;
+                    if(heightMap[x][y] < Max){
+                        res += Max - heightMap[x][y];
+                    }
+                    minHeap.push({heightMap[x][y],{x,y}});
+                }
+            }
+        }
+        return res;
+    }
+private:
+    using pip = pair<int,pair<int,int>>;
+    struct comp{
+        bool operator()(const pip& a, const pip& b)const{
+            return a.first > b.first;
+        }
+    };
+};

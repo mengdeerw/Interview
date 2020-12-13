@@ -53,7 +53,7 @@ public:
     }
 };
 
-// DFS recursion: compute distance from root to target and collect nodes accordingly
+// METHOD-2: DFS recursion: compute distance from root to target and collect nodes accordingly
 // Time complexity: O(N)
 // Space complexity: O(N)
 class Solution {

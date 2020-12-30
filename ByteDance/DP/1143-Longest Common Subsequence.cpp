@@ -1,5 +1,5 @@
 // DP
-// Time complexity: O(N^2)
+// Time complexity: O(M*N)
 
 // DP[i][j] represents the longest common subsequence of s1[0 ... i - 1] & s2[0 ... j - 1]
 class Solution {

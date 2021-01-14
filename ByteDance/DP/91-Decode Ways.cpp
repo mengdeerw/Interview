@@ -70,6 +70,27 @@ public:
     }
 };
 
+class Solution {
+public:
+    int numDecodings(string s) {
+        int n = s.size();
+        vector<int> dp (n + 1, 0);
+        dp[0] = 1;
+        
+        for (int i = 1; i < n + 1; i++) {
+            int num2 = last2(s, i - 1);
+            if (s[i - 1] - '0' > 0) dp[i] += dp[i - 1];
+            if (num2 >= 10 && num2 <= 26) dp[i] += dp[i - 2];
+        }
+        return dp[n];
+    }
+    
+    int last2(string& s, int i) {
+        int n1 = (i - 1 >= 0) ? s[i - 1] - '0' : 0;
+        return n1 * 10 + s[i] - '0';
+    }
+};
+
 // METHOD-4: DP
 // Time Complexity: O(N)
 // Space complexity: O(1)

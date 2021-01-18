@@ -68,3 +68,28 @@ Now result has
 "adh", "aeh", "afh", "bdh", "beh", "bfh", "cdh", "ceh", "cfh"
 "adi", "aei", "afi", "bdi", "bei", "bfi", "cdi", "cei", "cfi" }
 */
+
+// backtrack
+class Solution {
+public:
+    vector<string> keypad = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    
+    vector<string> letterCombinations(string digits) {
+        vector<string> result;
+        if (digits.empty()) return result;
+        backtrack(digits, keypad, result, 0, "");
+        return result;
+    }
+    
+    void backtrack(string& digits, vector<string>& keypad, vector<string>& result, int level, string tmp) {
+        if (level == digits.size()) result.push_back(tmp);
+        else {
+            string button = keypad[digits[level] - '0'];
+            for (int i = 0; i < button.size(); i++) {
+                tmp.push_back(button[i]);
+                backtrack(digits, keypad, result, level + 1, tmp);
+                tmp.pop_back();
+            }
+        }
+    }
+};

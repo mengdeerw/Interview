@@ -58,3 +58,27 @@ public:
         return result;
     }
 };
+
+// bucket sort
+// Time complexity: O(N)
+class Solution {
+public:
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        unordered_map<int, int> m;
+        for (int num: nums) m[num]++;
+        
+        vector<vector<int>> bucket (nums.size() + 1); // consider case [1]
+        for (auto& kv: m) {
+            bucket[kv.second].push_back(kv.first);
+        }
+        
+        vector<int> result;
+        for (int i = bucket.size() - 1; i >= 0; i--) {
+            for (int j = 0; j < bucket[i].size(); j++) {
+                result.push_back(bucket[i][j]);
+                if (result.size() == k) return result;
+            } 
+        }
+        return result;
+    }
+};

@@ -37,9 +37,9 @@ In a real life solution we will not hash the entire file content, since it's not
 3. If you can only read the file by 1kb each time, how will you modify your solution?
 This won't change the solution. We can create the hash from the 1kb chunks, and then read the entire file if a full byte-by-byte comparison is required.
 
-What is the time complexity of your modified solution? What is the most time consuming part and memory consuming part of it? How to optimize?
+4. What is the time complexity of your modified solution? What is the most time consuming part and memory consuming part of it? How to optimize?
 Time complexity is O(n^2 * k) since in worse case we might need to compare every file to all others. k is the file size
 
-How to make sure the duplicated files you find are not false positive?
+5. How to make sure the duplicated files you find are not false positive?
 We will use several filters to compare: File size, Hash and byte-by-byte comparisons.
 */

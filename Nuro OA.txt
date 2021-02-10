@@ -1,0 +1,22 @@
+//problem: count islands in a graph
+//
+// A graph is a collection of nodes that are connected to each other with
+// edges. There are N nodes, numbered 1..N. and M edges. Each edge connects
+// two different node numbers. Here is an example graph with N= 8, M=6:
+//
+// 1---2---3 6 8
+// | | |
+// 4---5 7
+//
+// The goal is to count the number of islands in the graph. An island is a
+// graph of nodes that are connected only to themselves and not to any of the
+// other nodes in the graph. The above example has three islands. As a node
+// not connected to anything at all is regarded as it own island.
+
+// Implement the function IslandCount() below. The values N and M are passed
+// in, along with the array E which contains pairs of node numbers that are
+// connected by edges. The above example has E equal to
+//
+// E = { 1,2,2,3, 1,4, 2, 5, 4,5, 6, 7}
+//
+// IslandCount() should return the number of islands in the graph.

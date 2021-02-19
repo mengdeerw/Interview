@@ -59,3 +59,64 @@ public:
         }
     }
 };
+
+// Naive Union Find 
+// Time: O(n*m), where m is the number of connections, n is the number of nodes.
+// Space: O(n)
+class Solution {
+public:
+    int countComponents(int n, vector<vector<int>>& edges) {
+        vector<int> parents(n);
+        for (int i = 0; i < n; i++) {
+            parents[i] = i; //父节点指针初始指向自己
+        }
+        int components = n;
+        for (auto e: edges) { // for each edge
+            int p1 = find(parents, e[0]);
+            int p2 = find(parents, e[1]);
+            if (p1 != p2) { // merge two trees
+                parents[p1] = p2;
+                components--;
+            }
+        }
+        return components;
+    }
+private:
+    int find(vector<int>& parents, int i) {
+        while (parents[i] != i) { // 根节点parents[x] == x
+            i = parents[i];
+        }
+        return i; // without path compression
+    }
+};
+
+// Union Find w/ path compression 
+// Time: O(n+mlogn), where m is the number of connections, n is the number of nodes.
+// Space: O(n)
+class Solution {
+public:
+    int countComponents(int n, vector<vector<int>>& edges) {
+        vector<int> parents(n);
+        for (int i = 0; i < n; i++) {
+            parents[i] = i; //父节点指针初始指向自己
+        }
+        int components = n;
+        for (auto e: edges) { // for each edge
+            int p1 = find(parents, e[0]);
+            int p2 = find(parents, e[1]);
+            if (p1 != p2) { // merge two trees
+                parents[p1] = p2;
+                components--;
+            }
+        }
+        return components;
+    }
+private:
+    int find(vector<int>& parents, int i) {
+        while (parents[i] != i) { // 根节点parents[x] == x
+            parents[i] = parents[parents[i]];
+            i = parents[i];
+        }
+        return i;
+    }
+};

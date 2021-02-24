@@ -69,3 +69,33 @@ public:
         return str;
     }
 };
+                       
+// METHOD-3: recursion
+class Solution {
+public:
+    string decodeString(string s) {
+        int index = 0;
+        return decodeString(s, index);
+    }
+    
+    string decodeString(string& s, int& index) {
+        string result;
+        while (index < s.length() && s[index] != ']') {
+            if (!isdigit(s[index])) {
+                result += s[index++];
+            } else {
+                int k = 0;
+                while (index < s.length() && isdigit(s[index])) {
+                    k = k * 10 + s[index++] - '0';
+                }
+                index++; // opening bracket '['
+                string str = decodeString(s, index);
+                index++; // closing bracket ']'
+                while (k-- > 0) {
+                    result += str;
+                }
+            }
+        }
+        return result;
+    }
+};

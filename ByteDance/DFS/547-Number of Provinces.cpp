@@ -57,3 +57,41 @@ public:
         return result;
     }
 };
+
+// METHOD-3 union find
+// Time complexity : O(n^3). We traverse over the complete matrix once. Union and find operations take O(n) time in the worst case.
+// Space complexity : O(n)O(n). parentparent array of size nn is used
+class Solution {
+public:
+    int find(vector<int>& parents, int i) {
+        if (parents[i] == -1) return i;
+        return find(parents, parents[i]);
+    }
+    
+    void do_union(vector<int>& parents, int x, int y) {
+        int rx = find(parents, x);
+        int ry = find(parents, y);
+        if (rx != ry) {
+            parents[rx] = ry;
+        }
+    }
+    
+    int findCircleNum(vector<vector<int>>& isConnected) {
+        int n = isConnected.size();
+        vector<int> parents (n, -1);
+        
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (isConnected[i][j] == 1 && i != j) {
+                    do_union(parents, i, j);
+                }
+            }
+        }
+        
+        int result = 0;
+        for (int i = 0; i < n; i++) {
+            if (parents[i] == -1) result++;
+        }
+        return result;
+    }
+};

@@ -1,3 +1,4 @@
+//https://algo.monster/problems/shopping_patterns
 /*
 Shoe Monster, a popular shopping website for atheletic shoes, would like to know which shoes are frequently bought together.
 When a customer purchases two shoes together, we log an edge between the two products. Three shoes that are interconnected form a triple.

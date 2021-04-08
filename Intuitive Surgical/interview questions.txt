@@ -28,6 +28,7 @@
  - if having conflicts with colleagues, what will you do?
  - if colleagues is doing something dangerous, what will you do?
  - when having lots of to-do tasks, how to manage?
+ - explain different conmmunicational protocols and their advantages/disadvantages.
  - given a schematic, temperature-resistor sensor and a microcontroller, how to let microcontroller output the temperaure?
   a) use ADC to convert voltage signal to digital input to send to microcontroller
   b) how do you measure the exact constant of k, given T = k * R?

@@ -1,0 +1,37 @@
+1. Hiring manager phone interview: ~30mins for background checking, skills and technical questions about embedded systems.
+
+2. Coding phone interview: ~45mins - hiring manager.
+   Given a schematic of microcontroller surgical system, design and write code for implementation
+   - how to convert input I/O signals to variables that program can use
+   - closed loop control (PID control) coding
+   - more focused on the high level design.
+   
+3. Virtual Onsite Interview:
+1) Recruiter checking ~30mins
+
+2) Staff Software Engineer1: ~45mins
+ - behavioral questions: most challenging project/complicated issues and how to solve?
+ - technical question:
+  a) given a black box system that software is not working, how to diagnostic?
+  b) how is breakpoint working in IDE, mechanism behind it
+  c) multi-thread: how to synchronizing data between different threads; mutex/thread-locking
+  d) explain runtime polymorphism, how it is working
+  e) software design pattern?
+ - coding question:
+  a) find closest number to a target in an array; optimization(binary search is not enough? asked using memory to compensate time?)
+  b) find bitsets of decimal number:
+   - give two solutions not enough? 1) convert to string and count '1' char 2) using bit shifting to count 1 (need to shift 32 times for integers, was asked for optimization)
+  
+3) Principal Electrical Engineer: ~45mins
+ - what's the most interesting school/work projects and why enjoy it?
+ - open to picking up new knowledge?
+ - if having conflicts with colleagues, what will you do?
+ - if colleagues is doing something dangerous, what will you do?
+ - when having lots of to-do tasks, how to manage?
+ - given a schematic, temperature-resistor sensor and a microcontroller, how to let microcontroller output the temperaure?
+  a) use ADC to convert voltage signal to digital input to send to microcontroller
+  b) how do you measure the exact constant of k, given T = k * R?
+
+4) Staff Software Engineer2:
+5) Software Engineer1:
+6) Software Engineer2:

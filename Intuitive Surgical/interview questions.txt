@@ -33,6 +33,27 @@
   a) use ADC to convert voltage signal to digital input to send to microcontroller
   b) how do you measure the exact constant of k, given T = k * R?
 
-4) Staff Software Engineer2:
+4) Staff Software Engineer2: ~45min
+ - Coding: given a schematic of temperature sensor, ADC and microcontroller, write code:
+  a) how ADC converts analog voltage to digital signals (12bits);
+  b) how processors do circular buffer(head pointer and tail pointer)?
+   - processor1 pushes data into fixed-size buffer, processor2 pulls the data out from buffer
+   - code should throw exception when buffer is full during pushing and when buffer is empty during polling
+
 5) Software Engineer1:
+ No coding, technical questions:
+ - communication protocols
+ - embedded system projects
+ - c++ related questions:
+  a) difference with C and C++
+  b) what is namespace used for
+  c) lambda expression/function and how to defind the scope? A: the field inside [] brackets is used for scopes
+  d) what is #ifdef?
+  e) what is generic? the type template in c++: queue<int>
+  f) how to code multi-threads? in c++11
+  g) c++11 related questions
+  h) shared_pointer vs unique_pointer
+ 
 6) Software Engineer2:
+ - behavioral: the most difficult technical question have ever met and how to solve it?
+ - coding: given a function bool get_adc_value(int timestamp, int adc_value), implements a code/data structure to sort the input in ascending order based on adc_value, print out the corresponding timestamps in order.

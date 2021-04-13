@@ -205,3 +205,12 @@ round 5 老印L7-纯bq
 第三轮，coding，也是很简单的题目，给一个2d的char array， 再给一个String类型的word， 让你找这个word在这个array里面的位置。
 第四轮，ood有面经，参考https://leetcode.com/discuss/int ... -Linux-Find-Command
 然后问下有没有同在team match的同学，求组队啊！
+
+16. https://www.1point3acres.com/bbs/thread-736820-1-1.html
+4轮
+1. 30-40 分钟闲聊BQ, 有一个SDE, 一个Sr. SDM 旁听
+系统设计 parking lot, 答的不好
+2. BQ, coding, 印人小妹, build package, 类似 course schedule II
+3. coding, BQ, SDM, start from writing a server to get key, build upon it, use cache service, what if cache on different server?
+4. coding, 国人小妹, BQ 30 mins, a graph problem
+从portal 看到,应该已经挂了, move on, 准备其他公司

@@ -197,3 +197,11 @@ round 5 老印L7-纯bq
 
 第四轮：
 * 设计零售店零售店商品信息查询的工具，帮助回答客户对商品的问题，一个product有name/price/description等信息，假设有1000家商店，每个商店有10000种商品
+
+15. https://www.1point3acres.com/bbs/thread-737739-2-1.html
+新鲜的亚麻过经，不过遗憾的是楼主面的是SDE2，结果被downgrade到SDE1, recruiter告知需要team match，感觉现在招SDE1的组并不多，希望发个面经能攒攒人品哈哈，话不多说，进入正题
+第一轮，system design，设计一个股票系统，这轮回答得一般般，确实没有什么系统设计的经验
+第二轮， coding, 立扣 药要留
+第三轮，coding，也是很简单的题目，给一个2d的char array， 再给一个String类型的word， 让你找这个word在这个array里面的位置。
+第四轮，ood有面经，参考https://leetcode.com/discuss/int ... -Linux-Find-Command
+然后问下有没有同在team match的同学，求组队啊！

@@ -104,3 +104,96 @@ return: [1,2] because arr[1] + arr[2] = 1 + 10 = 11,  11 is smaller than the t
 第四轮 1. 以而已 要求输出赚了多少钱，哪天买的哪天卖的。 2. 汽酒
 
 周五面的，周一下午就拒了。 不知道是已经招到人了只是走个过场，还是本人太弱了。。。 现在的工作做的很不开心，在职刷题也已经半年了。。。真的面得好绝望了。。。寥寥几题希望可以帮到你们，加油吧！
+
+9. https://www.1point3acres.com/bbs/thread-742475-1-1.html
+真的太讨厌bq了，每轮都30+min bq
+
+1. 美国小哥，馓锶跋
+2. 亚裔大叔，僦綦毵
+3. 中国人姐姐，婺驷馓
+4. 南亚hm（不知道是不是天竺人，英语很好），停车场
+
+感觉hm轮面得非常垃圾。。。
+hm讲话很aggressive，没讲完就被打断，菜鸡转码楼主真的很慌
+而且bq问了45min，最后超时15min
+
+10. https://www.1point3acres.com/bbs/thread-742994-1-1.html
+Timeline:3.5 OA
+3.24 Onsite
+3.31 口头offer
+4.2 HM call （AWS 5G组），recruiter说楼主感兴趣的组在湾区没坑，于是安排了这个组， 楼主聊了之后表示想继续聊聊其他的组，recruiter继续约了两个EC2的组下周聊， 一个EC2 Nitro，一个EC2 Enterprise
+------------------------
+
+Onsite：
+R1: HM + 另外一个组的HM Shadow 。 BQ + Design Tic Tac Toe. 注意是system design 不是OOD， 不需要设计class，讲清楚架构就好。 楼主当时问要画图吗，Chime不好share我的ipad的屏幕。 HM说do what ever you want。。。。然后开启嘴炮模式，半个图都没画。一些重要的点：database，LB， cache（WAL， read replica）， consistent hashing， database failover， instance group autoscaling。
+R2: 南亚小姐姐。Meeting rooms II， nlog(n) + follow up o(n)。 用bucket sort。写完剩20分钟一直聊到结束。。小姐姐边问边吃东西hhhhh
+R3: 中国小哥 + 南亚小哥shadow，BQ + 简单BFS类似刷题网200。 剩5分钟Q&A。
+R4: 南亚小哥， design filter， 根据文件大小或者type设计filter class。 （说好不考OOD的。。。。）
+
+11. https://www.1point3acres.com/bbs/thread-742466-1-1.html
+店面是tok k elements
+onsite
+第一轮：吴拔幺
+第二轮：散巴凌
+第三轮：Find minimum number of coins that make a given value
+第四轮：design a uber backend
+
+我准备的bq，基本全覆盖：
+negative feedback
+come up with a simple solution to solve a problem
+dive deep
+miss ddl
+did sth. without asking approval from manager
+persist on sth/learn sth new to achieve goal
+failed/made mistake
+do sth out my responsibility
+overcome a difficulty
+make impact
+disagree with manager or colleague(同意我)
+disagreements with others(但没同意我)
+help others
+
+12. https://www.1point3acres.com/bbs/thread-742112-1-1.html
+AWS 周一面的L5，下午HR打电话 downgrade成L4, 准备接了, 面试官+shadow 一共十个老印
+
+round 1 老印L5-LCA
+round 2 老印L6-graph dfs
+round 3 老印L7-system design: design一个信号收发系统
+round 4 老印L6-这个题很简单就会用hashmap就会做. LC上应该没有。
+round 5 老印L7-纯bq
+
+13. https://www.1point3acres.com/bbs/thread-740744-1-1.html
+每一轮都有很多的BQ。差不多每一轮都聊了半小时。面试官都很nice。
+
+代码题有find median from data stream。我给的是双heap的解法。面试官看来很迷惑。我刚开始吃不准是在考察我代码还是他真没明白，后来发现是真没太明白。这个面试官后来据了解还正是我要去的组的senior。另外和这个面试官沟通有也些问题。不知道为什么，感觉口音什么都还好，就是沟通有些费力，一直板着脸。可能是挂在这一轮？
+
+另外的代码题有typehead，简单的写一个trie就行。不过就是walk through代码的时候，最好是自己准备好画diagram的工具。不然解释代码会很费劲。给这个面试官解释代码的时候也不是特别的轻松。我有些纳闷，因为我也没有什么奇技淫巧，都是很直白的代码，比如python的list comprehension什么的我都没有用，defaultdict什么的我也都不敢用。而且trie的实现也都是很常见的写法
+
+还有一个题是bar raiser的，Jump Game的略微变形。也不困难。这个面试官很棒，给他说各种不同的解法的时候都能相互跟上，聊得很开心。最后一些代码问题直接给我跳过去了让我开始问问题。
+
+还有一个system design。这个我觉得是真的超出我能力范围了。完全不是常见的messager，twitter之类的。而是说他们现在的产品打算要支持几个API，问我该怎么设计。差不多就是要设计一个分布式数据库类似于mongoDB。如果是常见的design我还能应对过来，这个我强行说完了但感觉面试官不是很满意。
+
+总结：
+整体面试体验不错。亚麻的面试流程还是很专业的。就是BQ回答的很费嗓子。
+
+心得：
+刷题很重要，但是代码题只是面试的入门门槛。BQ和System design有很大的impact。
+
+哎，虽然地里一直说亚麻文化不好，但是加拿大这边钱给的多又有岗位的大厂也就是它了。还是很想去体验一下血汗工厂的。继续努力吧。
+
+14. https://www.1point3acres.com/bbs/thread-740403-1-1.html
+分享挂经 求加米
+第一轮：
+* 做超出自己责任范围的事情；一个自己回顾觉得可以做的更好的项目
+* 跟定一个locker collection和一个package，返回可以装下package的最优locker. (OOD)
+
+第二轮：
+* 为用户 went above and beyond的例子；用简单工具解决复杂问题的例子
+* 跟定一个无向图，返回两个节点之前的最短距离
+
+第三轮：
+* 与老板有不同意见的例子；做不属于自己责任范围内的事
+*刷题网 二五三
+
+第四轮：
+* 设计零售店零售店商品信息查询的工具，帮助回答客户对商品的问题，一个product有name/price/description等信息，假设有1000家商店，每个商店有10000种商品

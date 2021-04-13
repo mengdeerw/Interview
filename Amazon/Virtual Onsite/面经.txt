@@ -1,3 +1,4 @@
+1. https://www.1point3acres.com/bbs/thread-746546-1-1.html
 目前是学生，但国内有工作经验。linkedin上亚麻的recruiter联系了我，然后开始走流程。面的是SDE II，没有组，感觉是general hiring
 OA很顺利的过了，直接onsite，废话不多说了，分享一下面试过程。求大米呀~~
 
@@ -36,3 +37,70 @@ OA很顺利的过了，直接onsite，废话不多说了，分享一下面试过
 周五面的，下周一中午收到拒信。
 
 总结一下，我感觉我遇到的coding题目都不是LC原题，但又有些类似。不算难，麻烦的地方在于需要自己设计函数的参数和返回值。感觉自己功力还是不够，继续努力加油吧。 求大米~~
+
+
+2.https://www.1point3acres.com/bbs/thread-746368-1-1.html
+
+1） SDM 白, system design. kindle, 不同的设备，一个设备在书中某一段highlight并comment，如何同步到其它系统。
+2） SDE 印, SDM 白 shadow bar raiser，coding. 给一个int[] array, 可以有负数，返回任意a^2+b^2=c^2的a, b, c，如果不用extra space，能有比O(n^2)更优的解法吗？
+3)  SDEIII 印, coding. implement a pluggable evictor cache. 先设计interface，再具体implement LRU。如果是多线程会有什么问题，如何解决。
+Evictor e1 = new LruEvictor();
+Evictor e2 = new LfuEvictor();
+Cache cache = new Cache(e, size);
+4) SDEIII 中, coding, implement: Merge k Sorted Lists, follow up, make it type generic
+
+3. https://www.1point3acres.com/bbs/thread-746595-1-1.html
+1. BQ + 产品分类题 比如input是(1,2) (3,4) (1,3) (5,6) (7,8)，每个pair表示是在一个product category，要求输出[(1,2,3,4), (5,6), (7,8)], UF或者Adj list都可以解
+2. BQ + 蠡口伞市漆
+3. BQ + 智能门锁 system design, 讨论了一些安全性的问题，backend的设计
+4. BQ + Typeahead, 我是用trie，然后每个trie开个set记录所有以这个prefix开头的字符串来解
+
+4.https://www.1point3acres.com/bbs/thread-745582-1-1.html
+
+虽然挂了，但是必须要回来回馈地里！
+
+总共四轮，西部时间8点开始，每轮1个小时，中间15分钟休息。（东部时区的同学一定要吃早餐或者brunch，要不下午快4点才吃第一餐的感觉简直不要太爽😵）
+第一轮：和蔼的印度大叔，BQ半小时，system design：设计Spotify第二轮：高冷的英语纯正的印度小哥，BQ半小时，Linux Find变种
+第三轮：温和的东欧小哥，面得最差的一轮。或许因为口音问题，感觉我听不懂他，他听不懂我。BQ草草了事，Coding题是他自己编的，感觉也是想往Linux Find靠，但是因为沟通不畅，乱写一通。
+第四轮：面带微笑的国人小姐姐，表情冷峻的白男shadow。BQ半小时，Coding让设计一个Drop box的sync算法，感觉应该也是用Linux Find往上套，但是还有别的细节。小姐姐疯狂给提示，但是不知道是第三轮搞砸了心态，还是最后一轮低血糖了，脑子一点不转，没有写得很好。感觉很对不起这位国人小姐姐。
+
+Linux Find的模版：https://leetcode.com/discuss/interview-question/369272/Amazon-or-Onsite-or-Linux-Find-Command
+
+求米求人品，再战接下来的公司
+
+5. https://www.1point3acres.com/bbs/thread-745119-1-1.html
+VO四轮（每轮60分钟，基本上是15-20BQ + 30（做题） + 5QA，BQ和做题顺序可能会换，BQ每轮会有2-3个，每轮中间15分钟休息，西部时间8点-12点45）
+
+1. 亚麻payment系统设计
+2. Parking lot OOD
+3. LC 32
+4. 给了一堆transaction信息，做个summary（followup，要是memory不够，怎么办）这题感觉蛮自由，说思路即可
+
+6. https://www.1point3acres.com/bbs/thread-744089-1-1.html
+1.) Behaviroal
+2.) lc #238
+3.) Give an unsorted array of int and a target, return the indexes of all possible pair that their sum equals to the target
+example: [2,1,10,9]  target = 11
+return: [0, 3] and [1, 2]
+     Follow up: Return the the indexes of a pair that their sum is the closet to the target. (assume there's no exact match to the target, and the sum of the pair HAS TO BE LESS than the target)
+example: [3, 1, 10, 9] target = 12
+return: [1,2] because arr[1] + arr[2] = 1 + 10 = 11,  11 is smaller than the target and is the possible closet number to the target
+4.) Design and implement a class that would retrieve top 10 most recent viewed items.
+
+7. https://www.1point3acres.com/bbs/thread-743809-1-1.html
+果然和地里大家说的一样，一堆behavioral题，幸亏提前练过故事准备的够，不过还是很费嗓子哈哈哈。
+
+第一个是system design，tinyURL
+第二个是getLocker() 基本上就是给一个Amazon locker，给一个新的package，return一个locker id。有很多需要clarify的地方。我写的code也是基于我的assumption。
+第三个是given k sorted arrays, return the next minimum element. 楼主给了两个解法，一个是用k个pointers，一个是有一个min heap存每个list最头上的element。还有一些根据我的code specific的followup
+第四个是给一个string representation of a tree, reconstruct the tree and return the root node. string representation长这样"B:C, C:D, C:E"这样，前面的是parent后面的是child。这题主要考察写production ready code，所以他followup了如果是production scale我会怎么改
+
+整体两个白人小哥 一个阿三姐姐 一个美国长大的阿三小哥 体验还不错 就是behavioral太多好累
+求大米，谢谢！
+
+8. https://www.1point3acres.com/bbs/thread-743658-1-1.html
+第一轮 纯BQ program manager 全程哈欠连篇的。。。第二轮 design parking lot ，我都开始pattern design了表都画了，她才说要system design，时间也不多了，连数据库sharding 都没怎么展开说那不是设计了个寂寞么
+第三轮 小哥来晚了，我和shadow面面相觑了10分钟，酒而已，followup是加其他各种括号怎么办，不可以使用stack，还只能扫一遍
+第四轮 1. 以而已 要求输出赚了多少钱，哪天买的哪天卖的。 2. 汽酒
+
+周五面的，周一下午就拒了。 不知道是已经招到人了只是走个过场，还是本人太弱了。。。 现在的工作做的很不开心，在职刷题也已经半年了。。。真的面得好绝望了。。。寥寥几题希望可以帮到你们，加油吧！

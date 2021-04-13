@@ -214,3 +214,22 @@ round 5 老印L7-纯bq
 3. coding, BQ, SDM, start from writing a server to get key, build upon it, use cache service, what if cache on different server?
 4. coding, 国人小妹, BQ 30 mins, a graph problem
 从portal 看到,应该已经挂了, move on, 准备其他公司
+
+17. https://www.1point3acres.com/bbs/thread-735085-1-1.html
+1) dfs or bfs traversal n-ary tree, + bq
+2) system design bicyle rental system, + bq with manger
+3) coding 死气而，这题真折腾人好在2年前刷过，想的脑袋痛。复杂度是O(n * L^3)别写错了。然后讨论了怎么用trie优化。我说这题好难，小哥笑笑说不难。nm。。。+ bq
+4）design parking lot + bq
+总之不难。但是第四轮应该要跪。烙印应该是team lead。也不知道哪里让他不满意了。最后我问问题，我就问你们平时用啥语言呀。套套近乎。感觉这厮cpp不懂。
+然后他炸了。他说语言我们大公司都不在乎的，我一周就学会了。主要是设计啊，软件啊啥的blahblah。我是同意他这么说的。但是他这个口气，如果以后是我的team lead，他肯定会说这个feature我一周就搞定了。
+然后他说谢谢你的时间。我感觉我凉了。
+
+18. https://www.1point3acres.com/bbs/thread-733393-1-1.html
+LZ在一个小厂工作刚满两年，recruiter在linkedin上勾搭的，面试完第二天hr打电话说通过。。
+觉得最难的不是把题做出来，而是把每一步思路说地清清楚楚，求加米谢谢。
+
+四轮VO，每轮1小时，都先有20分钟BQ
+第一轮蠡口耳酒七
+第二轮system design一个存package，取package 的lockbox system
+第三轮算法一个ood design，有点类似tic-tac-toe
+第四轮算法number of islands变种，数位于边缘的小格子数目

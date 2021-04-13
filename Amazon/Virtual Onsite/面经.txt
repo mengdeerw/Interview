@@ -252,3 +252,10 @@ OOD有点措手不及，从来没准备过
 第三轮 bar raiser：best time to buy/sell stock 变种
 第四轮 hm：design Amazon product notification system, 简单写table结构, 找bottleneck, 处理黑五scalability
 面完2个小时recruiter就打电话通知过了，给效率点赞。
+
+21.
+2月15收到HR消息，并提交申请，16号收到OA，19号做完OA，22号收到OA通过，24号Sync with HR，3/9 On site， 3/12收到口头Offer
+第一轮：烙印，烙印Shallow，BQ + Coding: 第一题：Two List find Common Elements，第二题：Valid Parenthness with '(' '{' ')' '}';
+第二题：Bar raiser，BQ + system design + 讨论：Design PasteBin
+第三题：老白，BQ + OOD：Design Linux Find
+第四题：烙印，老白Shallow，BQ + Coding：APIs for kindle：1. 判断输入是否正确 2. 提出修改意见 with common typos 3. 前缀搜索 4. 前缀搜索 with common typos

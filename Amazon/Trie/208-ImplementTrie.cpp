@@ -1,3 +1,5 @@
+// Time complexity: O（1）
+// Space complexity: O(prefixes)/ O(N*L^2)
 class Trie {
 public:
     /** Initialize your data structure here. */
@@ -50,4 +52,58 @@ private:
     }
     
     std::unique_ptr<TrieNode> root_; // TrieNode*
+};
+
+// without unique_ptr
+class Trie {
+public:
+    /** Initialize your data structure here. */
+    Trie(): root_(new TrieNode()) {}
+    
+    /** Inserts a word into the trie. */
+    void insert(string word) {
+        auto r = root_;
+        for (char c: word) {
+            if (!r->children[c - 'a']) {
+                r->children[c - 'a'] = new TrieNode();
+            }
+            r = r->children[c - 'a'];
+        }
+        r->is_word = true;
+    }
+    
+    /** Returns if the word is in the trie. */
+    bool search(string word) {
+        auto r = find(word);
+        return r && r->is_word;
+    }
+    
+    /** Returns if there is any word in the trie that starts with the given prefix. */
+    bool startsWith(string prefix) {
+        auto r = find(prefix);
+        return r != nullptr;
+    }
+private:
+    struct TrieNode {
+        bool is_word;
+        vector<TrieNode*> children;
+        TrieNode(): is_word(false), children(26, nullptr) {}
+        
+        ~TrieNode() {
+            for (auto child: children) {
+                if (child) delete child;
+            }
+        }
+    };
+    
+    TrieNode* root_;
+    
+    TrieNode* find(string& word) {
+        auto r = root_;
+        for (char c: word) {
+            r = r->children[c - 'a'];
+            if (r == nullptr) break;
+        }
+        return r;
+    }
 };

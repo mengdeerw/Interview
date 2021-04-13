@@ -244,3 +244,11 @@ LZ在一个小厂工作刚满两年，recruiter在linkedin上勾搭的，面试�
 system design轮听不太懂天竺英语，所以自己drive的比较多
 第三轮面试官不太理我
 OOD有点措手不及，从来没准备过
+
+20. https://www.1point3acres.com/bbs/thread-730693-1-1.html
+三轮coding+一轮system design。每轮至少2个大的BQ问题然后一堆follow up，基本每轮都聊了快30分钟，聊到嗓子冒烟。BQ的话地里的问题总结贴+这个网站https://interviewgenie.com/resources 分析每个LP考察什么，效果很好。例子越多越好，我准备了10个例子左右。
+第一轮：top k frequent elements + follow up
+第二轮：combination sum + 两个follow up变种
+第三轮 bar raiser：best time to buy/sell stock 变种
+第四轮 hm：design Amazon product notification system, 简单写table结构, 找bottleneck, 处理黑五scalability
+面完2个小时recruiter就打电话通知过了，给效率点赞。

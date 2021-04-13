@@ -233,3 +233,14 @@ LZ在一个小厂工作刚满两年，recruiter在linkedin上勾搭的，面试�
 第二轮system design一个存package，取package 的lockbox system
 第三轮算法一个ood design，有点类似tic-tac-toe
 第四轮算法number of islands变种，数位于边缘的小格子数目
+
+19. https://www.1point3acres.com/bbs/thread-733125-1-1.html
+两轮coding， 一轮 system design， 一轮OOD
+1. 不知道有没有原题，但就是BFS或者DFS遍历一个2d array的问题，中间一些点是不能visit的，会follow up一下复杂度
+2. system design, 雨林 locker，感觉在考察DB的设计和scalability
+3. 耳酒气
+4. OOD，机器人在2d的棋盘上可以move 和 attack的游戏，不同的机器人会有不同能力，比如move的范围，和attack的范围
+感觉BQ答的一般
+system design轮听不太懂天竺英语，所以自己drive的比较多
+第三轮面试官不太理我
+OOD有点措手不及，从来没准备过

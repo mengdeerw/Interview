@@ -1,3 +1,5 @@
+// time complexity: O(N^2)
+// space complexity: O(1)
 class Solution {
 public:
     int threeSumClosest(vector<int>& nums, int target) {

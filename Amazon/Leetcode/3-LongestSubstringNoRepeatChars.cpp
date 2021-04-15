@@ -54,14 +54,16 @@ class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
         unordered_map<char, int> index;
+        int left = 0, right = 0; 
         int result = 0;
-        
         for (int i = 0, j = 0; j < s.size(); j++) {
-            i = max(i, index[s[j]]); // update starting point
+            char r = s[j];
+            if (index.find(r) != index.end()) {
+                i = max(index[r], i);
+            }
             result = max(result, j - i + 1);
-            index[s[j]] = j + 1; // update last index
+            index[r] = j + 1;
         }
-        
         return result;
     }
 };

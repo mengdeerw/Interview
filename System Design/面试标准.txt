@@ -1,0 +1,14 @@
+https://www.linkedin.com/pulse/design-interview-from-interviewers-perspective-joey-addona?forceNoSplash=true
+https://www.jiuzhang.com/qa/1246/
+
+A Great Candidate (Type: Rare, Action: Hire on sight!)
+Great candidate will need little to no help with their design, after they’ve gathered all the proper requirements by asking clarifying questions. They will make a high level design, and then give details. The design will make sense and the interviewer will have trouble finding problems with it. When asked to explain parts of the design, the candidate will describe how the component works clearly and correctly. When asked to expand the design due to new requirements, the candidate will modify the design cleanly, or if necessary, re-design components.
+
+Good Candidate (Type: Common, Action: Hire if other interviews also go well)
+A good candidate will clarify requirements, and start building a high level design. Design flaws pointed out by the interviewer will be quickly fixed. When asked to explain parts of the design, the candidate will have little to no trouble explaining each component. They will have a high level understanding of the system, and will be able to adapt their design to new requirements. The design may appear a little hacked together by the end, but the overall design still looks like something that could be used to help build a real product.
+
+Bad Candidate (Type: Common, Action: Hire if new to design)
+A bad candidate will likely jump right into the design, and have to be asked to clarify requirements. Mistakes will be common, and the interviewer will end up finding problems with their design often. When design flaws are found, the candidate will have some trouble fixing them, but ultimately will be able to. When asked to justify or expand the design, the candidate will have trouble doing so due to incorrect initial design or lack of knowledge. Their end design will have parts that are incomplete, and the design will often feel hacked together.
+
+Horrible Candidate (Type: Rare, Action: DO NOT HIRE)
+A horrible candidate will usually have no clue where to start. They will need the problem broken down for them, instead of breaking down the problem by themselves. When asked to implement a single part, they may do well, but will be unable to think of the project as a whole. There will be a lot of problems with the overall design, and the end result will either be a spoonfed result where the interviewer(s) gave so many hints that the solution was practically given to the candidate, or a result that is so far from complete that it would be useless in real life."

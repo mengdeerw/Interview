@@ -31,3 +31,28 @@ public:
         return result;
     }
 };
+
+// The average time complexity for Bucket Sort is O(n + k). The worst time complexity is O(n²).
+class Solution {
+public:
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        unordered_map<int, int> m;
+        for (int num: nums) {
+            m[num]++;
+        }
+        
+        vector<vector<int>> bucket(nums.size() + 1);
+        for (auto& kv: m) {
+            bucket[kv.second].push_back(kv.first);
+        }
+        
+        vector<int> result;
+        for (int i = bucket.size() - 1; i >= 0; i--) {
+            for (int num: bucket[i]) {
+                if (result.size() == k) break;
+                result.push_back(num);
+            }
+        }
+        return result;
+    }
+};

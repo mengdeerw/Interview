@@ -47,3 +47,28 @@ public:
         return result;
     }
 };
+
+// another versionclass Solution {
+public:
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        unordered_map<string, vector<string>> m;
+        
+        vector<int> count(26, 0);
+        for (string& s: strs) {
+            fill(count.begin(), count.end(), 0);
+            for (char& c: s) count[c - 'a']++;
+            // normalize each string
+            string temp = "";
+            for (int i = 0; i < 26; i++) {
+                temp += "#" + to_string(count[i]);
+            }
+            m[temp].push_back(s);
+        }
+        
+        vector<vector<string>> result;
+        for (auto& kv: m) {
+            result.push_back(kv.second);
+        }
+        return result;
+    }
+};

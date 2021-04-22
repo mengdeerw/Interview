@@ -1,0 +1,13 @@
+qinshimingyue 发表于 2021-4-18 11:33
+请问ood是lc上的那种lru类的，还是要设计class，请教准备的建议。
+
+要设计也要搞problem solving，看情况，有些ood问题侧重于设计有些不是，要是给你具体数据了或者让你找最优解那明显就是考你problem solving，要是问题很简单很模糊估计是ood，当场问面试官就行了。
+设计的话，先确认需求和限制条件，再设计core object -> 想想每个object的use case -> 写interface写abstract class写properties -> 填充functions -> 过一遍测试看看哪里还有问题。
+
+代码要规范整洁，变量命名要有可读性。
+什么SOLID准则、strategy pattern、factory pattern乱七八糟的都练习一下。
+把经典问题都过一遍一般来说就够了。
+
+当然，等面试官问完BQ之后估计OOD时间就不够了，可以看情况省去一些环节。
+
+重点还是在于沟通，一定要知道面试官想要什么，也让他了解你的沟通能力。

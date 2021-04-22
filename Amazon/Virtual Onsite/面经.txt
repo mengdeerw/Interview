@@ -259,3 +259,9 @@ OOD有点措手不及，从来没准备过
 第二题：Bar raiser，BQ + system design + 讨论：Design PasteBin
 第三题：老白，BQ + OOD：Design Linux Find
 第四题：烙印，老白Shallow，BQ + Coding：APIs for kindle：1. 判断输入是否正确 2. 提出修改意见 with common typos 3. 前缀搜索 4. 前缀搜索 with common typos
+
+22.
+1. 力扣 幺耳幺 + 幺耳耳
+2. OOD - 在一个社交网络里，如果你知道所有人买的东西，列出你的朋友们买的东西， followup是列出任意多层朋友买的东西
+3. 高频OOD - 设计车库，随机assign空着的车位给进车库的车，followup是assign最近的车位
+4. OOD - 设计一个卡牌游戏, 类似德扑这种，一开始非常抽象，需要和面试官一步步明确具体的要求，不要求写代码，估计也没有标准答案，主要是说清楚思路

@@ -1,0 +1,42 @@
+AMAZON 5/12 8:00 am PST
+2-3 LP/BQ each round 
+ -- past situations challenges
+ -- deadline, action?
+ -- difficult decision?
+ -- star methods
+ -- 10 out of 14 LP most important 
+(the first 8; customer obsession)
+1-2 stories for each LP
+ 
+3 rounds of coding: OOD?
+1) maintenance 2）data structure&algorithms 3) problem solving 
+   -- clarifying questions, put assumptions
+   -- data structures & algorithms
+   -- desrcibe code when necessarily
+   -- edge cases
+   -- clean code
+   -- live code link
+   -- ability to solve vague questions
+
+1 system design 
+   -- white broad
+   -- clarify questions
+   -- from customer point of view
+   -- think loud to solve questions
+   -- draw diagrams, web services, API, interation between components
+   -- scaling concepts: caching, microservices, sharding, db
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+MICROSOFT OTS
+1. no rush
+2. 60mins - 3 coding + multiple choice
+
+5/20 8:00 am PST
+- 4 round 45min/15min break:
+behavior + technical
+communication + coding + problem solving
+past exprience, projects
+coding + system design
+clarifying questions first
+if stuck on questions, listen to tips
+Why MICROSOFT, interested in which teams?

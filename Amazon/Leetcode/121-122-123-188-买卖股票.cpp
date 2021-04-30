@@ -61,3 +61,27 @@ public:
         return result;
     }
 };
+
+// Q122 买卖股票3 at most 2 transactions
+// simulation:
+/*
+cost1: the minimal cost of buying the stock in transaction #1. The minimal cost to acquire a stock would be the minimal price value that we have seen so far at each step.
+gain1: the maximal profit of selling the stock in transaction #1. (Actually, at the end of the iteration, this value would be the answer for the leetcode121)
+cost2: the minimal cost of buying the stock in transaction #2, while taking into account the profit gained from the previous transaction #1. (One can consider this as the cost of reinvestment. )
+gain2: the maximal profit of selling the stock in transaction #2.
+
+*/
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int cost1 = INT_MAX, cost2 = INT_MAX;
+        int gain1 = 0, gain2 = 0;
+        for (int i = 0; i < prices.size(); i++) {
+            cost1 = min(cost1, prices[i]);
+            gain1 = max(gain1, prices[i] - cost1);
+            cost2 = min(cost2, prices[i] - gain1);
+            gain2 = max(gain2, prices[i] - cost2);
+        }
+        return gain2;
+    }
+};

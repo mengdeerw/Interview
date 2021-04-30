@@ -29,3 +29,24 @@ public:
         return result;
     }
 };
+
+// Brute force
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        if (height.empty()) return 0;
+        int result = 0; 
+        int len = height.size();  
+        for (int i = 0; i < len; i++) {
+            int left_max = 0, right_max = 0;
+            for (int j = i; j >= 0; j--) {
+                left_max = max(left_max, height[j]);
+            }
+            for (int j = i; j < len; j++) {
+                right_max = max(right_max, height[j]);
+            }
+            result += min(left_max, right_max) - height[i];
+        }
+        return result;
+    }
+};

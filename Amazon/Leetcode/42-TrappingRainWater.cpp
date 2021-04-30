@@ -4,7 +4,7 @@
 /*
 1.Find maximum height of bar from the left end upto an index i in the array left_max.
 2.Find maximum height of bar from the right end upto an index i in the array right_max.
-3.Iterate over the \text{height}height array and update ans:
+3.Iterate over the height array and update ans:
   Add min(left_max[i], right_max[i]) - height[i] to ans
 */
 class Solution {

@@ -1,0 +1,93 @@
+Product Requirements:
+1. Need to be able to reserve a parking spot and receive some kind of ticket or receipt
+2. Need to be able to pay for a parking spot
+2. System needs to have a high consistency (no two people should be able to reserve the same spot at the same time)
+3. 3 types of vehicles (compact, regular, and large)
+4. flat rate based on time, but different rates depending on the type of parking
+
+API design:
+Public Endpoints
+1. /reserve
+ - Params: garage_id, start_time, end_time
+ - Returns: (spot_id, reservation_id)
+2. /payment
+ - Params: reservation_id
+ Note: Likely using an existing API to handle (Stripe, Square, etc...)
+3. /cancel
+ - Params: reservation_id
+ 
+Internal Endpoints
+1. /calculate_payment
+ - Params: reservation_id
+2. /freespots
+ - Params: garage_id, vehicle_type, time
+ Note: smaller vehicles can fit into larger spots if necessary and therefore should be included in the overall number of spots
+3. /allocate_spot
+ - Params: garage_id, vehicle_type, time
+4. /create_account
+ - Params: email, password, (optional)first name, (optional)last name
+ Note: 
+5. /login
+ - Params: email, password
+ 
+Scale:
+Calculate the upper boundary of garage spots: 10 floors and 200 spots per floor = 2000 spots per garage
+It does not require taking care of scaling issues.
+
+Storage:
+Data schema
+1. Reservations: 
+   id      | Primary key, serial
+ ---------------------------------
+  garage_id| foreign key, int
+  spot_id  | foreign key, int
+  start    | timestamp
+  end      | timestamp
+  paid     | boolean
+  
+2. Garage:
+  id           | Primary key, serial
+ -----------------------------------
+  zipcode      | varchar
+  rate_compact | decimal
+  rate_regular | decimal
+  rate_large   | decimal
+
+3. Spots: 
+  id           | primary key, serial
+  -----------------------------------
+  garage_id    | foreign_key, int
+  vehicle_type | enum
+  status       | enum
+  
+  Explains the type of each value, trade off using enum/decimal
+  
+ 4. Users:
+   id        | primary key, serial
+   ---------------------------------
+   email     | varchar
+   password  | varchar (note that this is probably SHA-256 hash)
+   first_name| varchar
+   last_name | varchar
+   
+  5. Vehicles:
+   id           | primary key, serial
+   ------------------------------------
+   user_id      | foreign key, int
+   license      | varchar
+   vehicle_type | enum
+   
+  High-level architecture:
+  
+                                3rd Party Payment
+                                Server(Stripe, Square)
+                                       |
+                                       |
+   WebApp/Mobile App UI --------> Backend Server------------------------write------>PostgreSQL DB(relational)----------shard read replicas by location---|
+                                             |------->Load Balancer------read---->PostgreSQL DB(read replicas) <-----------------------------------------|
+                                                                     |---read---->PostgreSQL DB(read replicas) <-----------------------------------------|
+                                                                trade-off: latency vs data consistency; can use read-locking
+                                                          
+                                                                
+                                                                
+   

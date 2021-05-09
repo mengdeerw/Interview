@@ -94,6 +94,7 @@ enum class VehicleSize {
     Large
 };
 
+// base class for vehicle types
 class Vehicle {
 public:
     virtual VehicleSize size() {}
@@ -130,6 +131,7 @@ public:
     }
 };
 
+// represents a level in a parking garage
 class Level {
 public:
     Level(int num_rows, int spots_per_row) {
@@ -185,7 +187,7 @@ private:
 
 class ParkingLot {
 public:
-    // @param n number of leves
+    // @param n number of levels
     // @param num_rows  each level has num_rows rows of spots
     // @param spots_per_row each row has spots_per_row spots
     ParkingLot(int n, int num_rows, int spots_per_row) {

@@ -1,3 +1,15 @@
+/*
+Title: designing the booking system
+
+-At present, there are two hotels in the system
+-There are two types of rooms in hotels: single and double
+-Booking system can support search, input date and number of people, and return to hotels where you can stay
+-Able to support Booking
+-Can cancel reservation
+
+-Need to implement BookingSystem class
+*/
+
 class SearchRequest  //搜索需求
 {
 private:

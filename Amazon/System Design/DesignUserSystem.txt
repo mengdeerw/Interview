@@ -1,0 +1,41 @@
+1. Scenario:
+a. DAU ~100M
+b. QPS:
+   I) register, login, info edit: ~100M * 0.1/86400 = ~100 per day per user;
+      peak ~300 per day per user;
+   II) query: 100M * 100/86400 = ~100k per day per user
+      peak ~300k per day per user;
+
+2. Service:
+a. Authentication Service
+ i) login system
+ ii) session
+ iii) cookie: hash table on client side (web server transfers user info to web browser, web browser attaches it to HTTP request.)
+ 
+b. User Service
+c. Friendship Service
+
+3. Storage:
+1) QPS comparison
+a. MySQL/ PosgreSQL: 1k QPS
+   - relational DB
+b. MongoDB/ Cassandra: 10k QPS
+   - hard disk NoSQL
+c. Redis/ Memcached: 100k ~ 1M QPS
+   - RAM NoSQL
+2) Property of user system: READ much more than WRITE! need Cache
+a. Cache: key-value structure; 
+    i) Memcachd: cache in RAM
+    ii) Redis: (equivalent to cache + DB)
+b. Cache miss:
+   - solution: database.set(key, user); cache.delete(key);
+c. Consistency between cache & DB:
+   - solution: ttl(time to live / time-out)
+d. Cache Aside: (mostly used in industry)
+    - server communicates with cache and DB, respectively
+    - Memcached + MySQL
+   Cache Trough:
+    - server communicates with cache ONLY; cache communicates with DB
+    - Redis (equivalent to cache + DB)
+   
+ 

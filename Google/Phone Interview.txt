@@ -1,0 +1,22 @@
+5/10/2021- Phone interview1:
+BQ: introduction + most recent project
+coding: find the start index of the longest increasing substring in a string
+example: "bcabcdec" should return 2.
+
+6/3/2021 - Phone interview2:
+BQ: introduction + work focus & customers related questions
+coding: find and replace function in IDE.
+Given:
+class Replacement {
+  int offset;
+  string before;
+  string after;
+};
+Example:
+input = "num foo...";
+replacements = {
+ {offset: 1, before = "um", after = "o"},
+ {offset: 4, before = "foo", after = "bar"}
+};
+output string should be: "no bar..."
+Followup: optimization and how to deal with edge cases

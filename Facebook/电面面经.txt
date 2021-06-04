@@ -65,3 +65,9 @@ https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 https://leetcode.com/problems/swap-nodes-in-pairs/
 2. Divide Two Integers
 https://leetcode.com/problems/divide-two-integers/
+
+
+1.久而要 
+https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
+2.要留五菱
+https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iii/

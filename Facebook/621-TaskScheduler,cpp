@@ -1,0 +1,51 @@
+// similar to leetcode-358: Rearrange String k Distance Apart
+/*
+We need to arrange the characters in string such that each same character is K distance apart, where distance in this problems is time b/w two similar task execution.
+Idea is to add them to a priority Q and sort based on the highest frequency.
+1. pick the task in each round of 'n' with highest frequency. 
+2. As you pick the task, decrease the frequency, save it in a cache and meanwhile using the next hightest frequency task for the next pick
+3. update the priority queue by pushing cache back into the queue after the round.
+*/
+// priority queue + hash table
+class Solution {
+public:
+    int leastInterval(vector<char>& tasks, int n) {
+        unordered_map<char, int> freq;
+        for (char task: tasks) {
+            freq[task]++;
+        }
+        
+        auto cmp = [](auto& a, auto& b) {
+            return a.second == b.second ? a.first > b.first : a.second < b.second; 
+        };
+        priority_queue<pair<char, int>, vector<pair<char, int>>, decltype(cmp)> pq (cmp); // max heap
+        
+        for (auto p: freq) {
+            pq.push(p);
+        }
+        
+        int min_time = 0;
+        while (!pq.empty()) {
+            vector<pair<char, int>> remains;
+            int interval = n + 1;
+            // fill the intervals with highest frequency tasks
+            while (interval > 0 && !pq.empty()) {
+                auto p = pq.top();
+                pq.pop();
+                p.second--;
+                remains.push_back(p);
+                interval--;
+                min_time++;
+            }
+            // update queue
+            for (auto& remain: remains) {
+                if (remain.second > 0) pq.push(remain);
+            }
+            // if job is done
+            if (pq.empty()) break;
+            // adding idle tasks because we used up all available tasks
+            min_time += interval;
+        }
+        return min_time;
+    }
+};

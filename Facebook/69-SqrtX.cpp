@@ -50,3 +50,32 @@ public:
         return (long) right * right > x ? left : right;
     }
 };
+
+// lintcode 586 - sqrtx II; 要求精确到小数点后12位
+// https://www.lintcode.com/problem/586/?_from=collection&fromId=106
+/*
+二分浮点数与寻常二分不同的是while中变成了whlie(left+eps<right)
+注意小数情况，若x<1将右边界扩大到1可避免结果错误（比如0.04=0.2*0.2）如果我们不将x右边界扩大到1，则无法在[0,0.04]的区间范围内找到正解
+*/
+class Solution {
+public:
+    /**
+     * @param x: a double
+     * @return: the square root of x
+     */
+    double sqrt(double x) {
+        // write your code here
+        double left = 0, right = x;
+        double mid;
+        if (right < 1) right = 1;
+        while (left + 1e-12 < right) {
+            mid = left + (right - left) / 2;
+            if (mid * mid < x) {
+                left = mid;
+            } else {
+                right = mid;
+            }
+        }
+        return left;
+    }
+};

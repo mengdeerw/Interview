@@ -46,3 +46,30 @@ public:
         return result;
     }
 };
+
+// METHOD-2: greedy + min heap
+class Solution {
+public:
+    /**
+     * @param airplanes: An interval array
+     * @return: Count of airplanes are in the sky.
+     */
+    int countOfAirplanes(vector<Interval> &airplanes) {
+        sort(airplanes.begin(), airplanes.end(), [](auto& a, auto& b){
+            return a.start < b.start;
+        });
+        // min heap
+        priority_queue<int, vector<int>, greater<int>> pq; // save end time
+        int result = 0;
+        for (int i = 0; i < airplanes.size(); i++) {
+            int cur_start = airplanes[i].start;
+            int cur_end = airplanes[i].end;
+            while (!pq.empty() && pq.top() <= cur_start) { // means no overlap
+                pq.pop();
+            }
+            pq.push(cur_end);
+            result = max(result, (int)pq.size());
+        }
+        return result;
+    }
+};

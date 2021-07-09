@@ -70,3 +70,23 @@ public:
         return result;
     }
 };
+
+// METHOD-3: prefix sum
+// building a map: insert single element will take logN time where N is the size of map; but if inserting a range of elements, will be O(1) in average
+class Solution {
+public:
+    int minMeetingRooms(vector<vector<int>>& intervals) {
+        map<int, int> m;
+        for (auto interval: intervals) {
+            m[interval[0]]++; // start
+            m[interval[1]]--; // end
+        }
+        int rooms = 0; 
+        int result = 0;
+        for (auto& [time, event]: m) {
+            rooms += event;
+            result = max(result, rooms);
+        }
+        return result;
+    }
+};

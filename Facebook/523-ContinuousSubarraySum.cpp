@@ -55,3 +55,44 @@ public:
         return false;
     }
 };
+
+// 二刷
+/*
+using prefix sum + hashmap;
+it is important to realize that we need to find a prefix_i and prefix_j who have the same remainder value mod by k:
+prefix_i = m * k + b
+prefix_j = n * k + c
+inorder to make prefix_i - prefix_j == x * k; b must equal to c
+
+hence, we will need a hashmap to record the remainder value and the index.
+comparing the difference of indices will help make sure if the length of subarray is larger or equal than 2 or not
+*/
+
+// WARNING: AGAIN, DONT FORGET to initialize the map in the very beginning: m[0] = -1 
+
+// time complexity: O(N)
+// space complexity: O(N)
+class Solution {
+public:
+    bool checkSubarraySum(vector<int>& nums, int k) {
+        int n = nums.size();
+        if (n < 2) return false;
+        
+        unordered_map<int, int> m; // {remainder: index}
+        m[0] = -1;
+        int prefix = 0;
+        for (int i = 0; i < n; i++) {
+            prefix += nums[i];
+            
+            if (k != 0) prefix %= k; // always save the remainder
+            if (m.find(prefix) != m.end()) {
+                int index = m[prefix];
+                if (i - index >= 2) return true;
+            } else {
+                // only updating the map when current prefix doesn't exist in the map
+                m[prefix] = i; // consider [5,0,0,0]
+            }
+        }
+        return false;
+    }
+};

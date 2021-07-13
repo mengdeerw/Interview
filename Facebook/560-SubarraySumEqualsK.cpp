@@ -69,6 +69,13 @@ public:
  2. the purpose is to find the prefix sum = prefix[i] - k;
  3. so we can convert this problem into 2sum, using a hashtable to record the frequency of a certain prefix sum that is equal to prefix[i] - k;
 */
+// prefix + hashmap
+// we define a prefix variable to sum up nums[0...i]
+// the goal is to find how many indexes(j) between [0...i] can make nums[j...i] == prefix_i - prefix_j == k
+// which means we need to find the target value that target(prefix_j) = prefix_i - k
+// to improve the time complexity, we can look up prefix_j in the frequency map and add counts to answer
+
+// WARING: DONT FORGET to initialize the frequency map in the very beginning (empty array is a subarray whose sum == 0!!!)
 
 class Solution {
 public:

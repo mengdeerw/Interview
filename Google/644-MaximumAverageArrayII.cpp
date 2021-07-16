@@ -47,13 +47,13 @@ private:
         for (int i = 0; i < k; i++) {
             rightSum += nums[i] - avg;
         }
+        if (rightSum >= 0) return true;
+        
         for (int i = k; i <= nums.size(); i++) {
+            rightSum += (double)nums[i] - avg;
+            leftSum += (double)nums[i - k] - avg;
+            minLeftSum = min(minLeftSum, leftSum);
             if (rightSum - minLeftSum >= 0) return true;
-            if (i < nums.size()) {
-                rightSum += (double)nums[i] - avg;
-                leftSum += (double)nums[i - k] - avg;
-                minLeftSum = min(minLeftSum, leftSum);
-            }
         }
         return false;
     }
